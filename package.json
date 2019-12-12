@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,21 @@
   },
   "homepage": "https://github.com/youngjun-na/nfl-salary#readme",
   "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
     "d3": "^5.14.2",
     "d3-svg-legend": "^2.25.6",
     "d3-tip": "^0.9.1",
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+    "node": "^13.3.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "css-loader": "^3.3.2",
+    "style-loader": "^1.0.1",
+    "webpack-merge": "^4.2.2"
   }
 }
