@@ -26,8 +26,11 @@
     "d3-svg-legend": "^2.25.6",
     "d3-tip": "^0.9.1",
     "fs-js": "^1.0.6",
+    "install": "^0.13.0",
     "materialize-css": "^1.0.0-rc.2",
     "node": "^13.3.0",
+    "npm": "^6.13.4",
+    "requirejs": "^2.3.6",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },

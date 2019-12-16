@@ -1,0 +1,538 @@
+[
+  {
+    "name": "Jimmy Garoppolo",
+    "pos": "QB",
+    "salary": 19350000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Quarterback"
+  },
+  {
+    "name": "Joe Staley",
+    "pos": "LT",
+    "salary": 14700000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tackle"
+  },
+  {
+    "name": "Dee Ford",
+    "pos": "DE",
+    "salary": 14600000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Richard Sherman",
+    "pos": "CB",
+    "salary": 9800000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Arik Armstead",
+    "pos": "DE",
+    "salary": 9046000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Solomon Thomas",
+    "pos": "DE",
+    "salary": 7678465,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Nick Bosa",
+    "pos": "DE",
+    "salary": 6100339,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Emmanuel Sanders",
+    "pos": "WR",
+    "salary": 5970588,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Kyle Juszczyk",
+    "pos": "FB",
+    "salary": 5950000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "DeForest Buckner",
+    "pos": "DT",
+    "salary": 5788044,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive Tackle"
+  },
+  {
+    "name": "Jaquiski Tartt",
+    "pos": "SS",
+    "salary": 4850000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Safety"
+  },
+  {
+    "name": "Mike McGlinchey",
+    "pos": "RT",
+    "salary": 4168580,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tackle"
+  },
+  {
+    "name": "Robbie Gould",
+    "pos": "K",
+    "salary": 3900000,
+    "team": "SF19",
+    "side": "special",
+    "parent": "Special Team"
+  },
+  {
+    "name": "Jimmie Ward",
+    "pos": "FS",
+    "salary": 3843750,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Safety"
+  },
+  {
+    "name": "Laken Tomlinson",
+    "pos": "G",
+    "salary": 3750000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Guard"
+  },
+  {
+    "name": "Tevin Coleman",
+    "pos": "RB",
+    "salary": 3600000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "Michael Person",
+    "pos": "G",
+    "salary": 2750000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Guard"
+  },
+  {
+    "name": "Garrett Celek",
+    "pos": "TE",
+    "salary": 2703125,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tight End"
+  },
+  {
+    "name": "K'Waun Williams",
+    "pos": "CB",
+    "salary": 2568750,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Raheem Mostert",
+    "pos": "RB",
+    "salary": 1895833,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "Mark Nzeocha",
+    "pos": "OLB",
+    "salary": 1650000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Dante Pettis",
+    "pos": "WR",
+    "salary": 1454671,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Deebo Samuel",
+    "pos": "WR",
+    "salary": 1399519,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Ahkello Witherspoon",
+    "pos": "CB",
+    "salary": 1058768,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Kyle Nelson",
+    "pos": "LS",
+    "salary": 1051764,
+    "team": "SF19",
+    "side": "special",
+    "parent": "Special Team"
+  },
+  {
+    "name": "C.J. Beathard",
+    "pos": "QB",
+    "salary": 962358,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Quarterback"
+  },
+  {
+    "name": "Fred Warner",
+    "pos": "OLB",
+    "salary": 915684,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Tarvarius Moore",
+    "pos": "FS",
+    "salary": 799093,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Safety"
+  },
+  {
+    "name": "Sheldon Day",
+    "pos": "DT",
+    "salary": 720000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive Tackle"
+  },
+  {
+    "name": "George Kittle",
+    "pos": "TE",
+    "salary": 719571,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tight End"
+  },
+  {
+    "name": "Mitch Wishnowsky",
+    "pos": "P",
+    "salary": 686018,
+    "team": "SF19",
+    "side": "special",
+    "parent": "Special Team"
+  },
+  {
+    "name": "D.J. Jones",
+    "pos": "DT",
+    "salary": 681963,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive Tackle"
+  },
+  {
+    "name": "D.J. Reed",
+    "pos": "CB",
+    "salary": 647842,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Kendrick Bourne",
+    "pos": "WR",
+    "salary": 646668,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Matt Breida",
+    "pos": "RB",
+    "salary": 646668,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "Ben Garland",
+    "pos": "C",
+    "salary": 645000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Center"
+  },
+  {
+    "name": "Levine Toilolo",
+    "pos": "TE",
+    "salary": 645000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tight End"
+  },
+  {
+    "name": "Jullian Taylor",
+    "pos": "DT",
+    "salary": 594510,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive Tackle"
+  },
+  {
+    "name": "Richie James",
+    "pos": "WR",
+    "salary": 589142,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Dre Greenlaw",
+    "pos": "LB",
+    "salary": 575429,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Ross Dwelley",
+    "pos": "TE",
+    "salary": 570000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tight End"
+  },
+  {
+    "name": "Nick Mullens",
+    "pos": "QB",
+    "salary": 570000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Quarterback"
+  },
+  {
+    "name": "Justin Skule",
+    "pos": "T",
+    "salary": 539714,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tackle"
+  },
+  {
+    "name": "Jeff Wilson",
+    "pos": "RB",
+    "salary": 536464,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "Azeez Al-Shaair",
+    "pos": "LB",
+    "salary": 500000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Daniel Brunskill",
+    "pos": "G",
+    "salary": 495000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Guard"
+  },
+  {
+    "name": "Emmanuel Moseley",
+    "pos": "CB",
+    "salary": 495000,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Marcell Harris",
+    "pos": "S",
+    "salary": 435882,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Safety"
+  },
+  {
+    "name": "Elijah Lee",
+    "pos": "OLB",
+    "salary": 303528,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Jeremiah Valoaga",
+    "pos": "DE",
+    "salary": 167645,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Jordan Matthews",
+    "pos": "WR",
+    "salary": 142058,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Dontae Johnson",
+    "pos": "CB",
+    "salary": 113824,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Antone Exum",
+    "pos": "S",
+    "salary": 64500,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Safety"
+  },
+  {
+    "name": "Kwon Alexander",
+    "pos": "ILB",
+    "salary": 11531250,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Linebacker"
+  },
+  {
+    "name": "Weston Richburg",
+    "pos": "C",
+    "salary": 7835000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Center"
+  },
+  {
+    "name": "Jerick McKinnon",
+    "pos": "RB",
+    "salary": 5750000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Running Back"
+  },
+  {
+    "name": "Marquise Goodwin",
+    "pos": "WR",
+    "salary": 3968750,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Jason Verrett",
+    "pos": "CB",
+    "salary": 2062500,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Shon Coleman",
+    "pos": "T",
+    "salary": 2025000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tackle"
+  },
+  {
+    "name": "Ronald Blair",
+    "pos": "DE",
+    "salary": 787602,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Trent Taylor",
+    "pos": "WR",
+    "salary": 695484,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Jalen Hurd",
+    "pos": "WR",
+    "salary": 688653,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Kentavius Street",
+    "pos": "DE",
+    "salary": 530550,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  },
+  {
+    "name": "Tim Harris",
+    "pos": "CB",
+    "salary": 417577,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Cornerback"
+  },
+  {
+    "name": "Shawn Poindexter",
+    "pos": "WR",
+    "salary": 379666,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Wide Receiver"
+  },
+  {
+    "name": "Andrew Lauderdale",
+    "pos": "T",
+    "salary": 378000,
+    "team": "SF19",
+    "side": "offense",
+    "parent": "Tackle"
+  },
+  {
+    "name": "Damontre Moore",
+    "pos": "DE",
+    "salary": 265587,
+    "team": "SF19",
+    "side": "defense",
+    "parent": "Defensive End"
+  }
+]
