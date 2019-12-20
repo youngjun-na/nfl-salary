@@ -2,6 +2,8 @@ const dims = {
   height: 1000,
   width: 1000
 };
+var x = d3.scaleLinear().range([0, 400]);
+var y = d3.scaleLinear().range([0, 400]);
 let view;
 
 let offense = [
@@ -83,43 +85,50 @@ const rootNode = stratify(data)
 
 // bubble pack gen
 
-const zoomTo = v => {
-  debugger;
+ function zoomTo(v) {
   const k = dims.width / v[2];
 
   view = v;
-  debugger;
-  label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-  node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-  node.attr("r", d => d.r * k);
+  graph.attr()
+  nodes.attr()
+  label.attr("transform", d =>{ 
+    debugger;
+    return `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`});
+  // node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+  // node.attr("r", d => d.r * k);
 }
 
-const zoom = d => {
-  debugger;
+function zoom(d, i, n) {
   let focus0 = focus;
-
+  debugger;
   focus = d;
+  const k = dims.width / d.r / 2;
+  x.domain([d.x - d.r, d.x + d.r]);
+  y.domain([d.y - d.r, d.y + d.r]);
 
-  const transition = svg.transition()
-    .duration(d3.event.altKey ? 7500 : 750)
-    .tween("zoom", d => {
-      debugger;
-      let i = d3.interpolateZoom([focus0.x, focus0.y, focus0.r * 2], [focus.x, focus.y, focus.r * 2]);
-      return t => zoomTo(i(t));
+  var transition = svg.transition()
+    .duration(d3.event.altKey ? 7500 : 750);
+
+  transition.selectAll('circle')
+    .attr("cx", function (d) {
+      return x(d.x);
+    })
+    .attr("cy", function (d) {
+      return y(d.y);
+    })
+    .attr("r", function (d) {
+      return k * d.r;
     });
-  label
-    .filter(function (d) { return d.parent === focus || this.style.display === "inline"; })
-    .transition(transition)
-    .style("fill-opacity", d => d.parent === focus ? 1 : 0)
-    .on("start", function (d) { if (d.parent === focus) this.style.display = "inline"; })
-    .on("end", function (d) { if (d.parent !== focus) this.style.display = "none"; });
+  focus = d;
+  d3.event.stopPropagation();
 }
 
 const pack = d3.pack()
   .size([dims.width, dims.height])
   .padding(3) //gap between circles
 
-const bubbleData = pack(rootNode).descendants();
+const bubbleData = pack(rootNode)
+.descendants();
 let focus = rootNode;
 
 //create ordinal scale
@@ -141,9 +150,11 @@ const nodes = graph.selectAll('g')
 
 nodes.append('circle')
   .attr('r', d => d.r)
-  .attr('stroke', 'white')
   .attr('stroke-width', 2)
+  .attr('stroke', 'white')
   .attr('fill', d => color(d.depth))
+  .attr('cx', d => d.x)
+  .attr('cy', d => d.y)
   .attr("pointer-events", d => !d.children ? "none" : null)
     // return focus !== d && (zoom(d), d3.event.stopPropagation())});
 
@@ -153,11 +164,12 @@ nodes.append('circle')
 graph.selectAll('circle')
   // .enter()
   .each(function (d) {this._current = d })
-  .on("mouseover", function () { d3.select(this).attr("stroke", "#000"); })
-  .on("mouseout", function () { d3.select(this).attr("stroke", null); })
+  .on("mouseover", function () { d3.select(this).attr("stroke", "black"); })
+  .on("mouseout", function () { d3.select(this).attr("stroke", "white"); })
   .on("click", d => {
     debugger;
-    zoom(d)})
+    zoom(focus === d ? root : d), d3.event.stopPropagation();
+  });
 
 // nodes.filter(node => !node.children)
 //   .append('text')
@@ -175,12 +187,14 @@ const label = svg.append("g")
   .join("text")
   .style("fill-opacity", 1)
   .style("display", "block")
-  .text(d => {d.data.name});
+  .style("font-color", "white")
+  .text(d => {
+    return d.data.name});
 
 // zoomTo([rootNode.x, rootNode.y, rootNode.r * 2]);
 
 
-
+// d3.select(self.frameElement).style("height", dims.width + "px");
 const handleClick = d => {
   debugger;
 }
