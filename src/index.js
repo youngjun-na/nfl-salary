@@ -2,9 +2,13 @@ import { offensePositions } from './offense_positions.js';
 import { defensePositions } from './defense_positions.js';
 
 const update = () => {
-  document.querySelectorAll(".teamIcon");
+  document.querySelectorAll(".teamIcon").forEach(team => {
+    team.addEventListener('click', e => {
+      offensePositions(e.currentTarget.id)
+    })
+  })
 }
-offensePositions("mia");
+update();
 // offensePositions();
 // let team = require('../data/sf19.json');
 // let data = offense.concat(team.filter(d => d.side === "offense"))
