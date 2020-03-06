@@ -1,70 +1,9 @@
 import { offensePositions } from './offense_positions.js';
 import { defensePositions } from './defense_positions.js';
 
-const dims = {
-  height: 500,
-  width: 500
-};
-var x = d3.scaleLinear().range([0, 250]);
-var y = d3.scaleLinear().range([0, 250]);
-let view;
-
-let offense = [
-  {
-    "name": "sf19",
-    "parent": ""
-  },
-
-  {
-    "name": "Quarterback",
-    "parent": "sf19"
-  },
-  {
-    "name": "Tackle",
-    "parent": "sf19"
-  },
-  {
-    "name": "Tight End",
-    "parent": "sf19"
-  },
-  {
-    "name": "Running Back",
-    "parent": "sf19"
-  },
-  {
-    "name": "Wide Receiver",
-    "parent": "sf19"
-  },
-  {
-    "name": "Guard",
-    "parent": "sf19"
-  },
-  {
-    "name": "Center",
-    "parent": "sf19"
-  }
-];
-let defense = [{
-  "name": "Defensive End",
-  "parent": "sf19"
-},
-  {
-    "name": "Defensive Tackle",
-    "parent": "sf19"
-  },
-  {
-    "name": "Cornerback",
-    "parent": "sf19"
-  },
-  {
-    "name": "Safety",
-    "parent": "sf19"
-  },
-  {
-    "name": "Linebacker",
-    "parent": "sf19"
-  }
-];
+const update = () => {
+  document.querySelectorAll(".teamIcon");
+}
 offensePositions("mia");
 // offensePositions();
 // let team = require('../data/sf19.json');

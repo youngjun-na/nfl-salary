@@ -179,3 +179,59 @@ const zoom = d => {
     .on("start", function (d) { if (d.parent === focus) this.style.display = "inline"; })
     .on("end", function (d) { if (d.parent !== focus) this.style.display = "none"; });
 }
+let offense = [
+  {
+    "name": "sf19",
+    "parent": ""
+  },
+
+  {
+    "name": "Quarterback",
+    "parent": "sf19"
+  },
+  {
+    "name": "Tackle",
+    "parent": "sf19"
+  },
+  {
+    "name": "Tight End",
+    "parent": "sf19"
+  },
+  {
+    "name": "Running Back",
+    "parent": "sf19"
+  },
+  {
+    "name": "Wide Receiver",
+    "parent": "sf19"
+  },
+  {
+    "name": "Guard",
+    "parent": "sf19"
+  },
+  {
+    "name": "Center",
+    "parent": "sf19"
+  }
+];
+let defense = [{
+  "name": "Defensive End",
+  "parent": "sf19"
+},
+{
+  "name": "Defensive Tackle",
+  "parent": "sf19"
+},
+{
+  "name": "Cornerback",
+  "parent": "sf19"
+},
+{
+  "name": "Safety",
+  "parent": "sf19"
+},
+{
+  "name": "Linebacker",
+  "parent": "sf19"
+}
+];
