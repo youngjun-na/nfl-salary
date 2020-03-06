@@ -1,4 +1,6 @@
-export const offensePositions = () => {
+import NFLCOLORS from '../data/colors.js';
+
+export const offensePositions = (teamCol) => {
   // const svg = d3.select('.canvas')
   //   .append('svg')
   //   .attr('width', 1000)
@@ -101,92 +103,76 @@ export const offensePositions = () => {
     .style("cursor", "pointer")
     .style("background", "green")
 
+  // const offPos = svg.append('g');
+  
   const center = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 600)
     .attr('cy', 150)
 
   const guardLeft = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 500)
     .attr('cy', 150)
 
   const guardRight = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 700)
     .attr('cy', 150)
 
   const tackleLeft = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 400)
     .attr('cy', 150)
 
   const tackleRight = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 800)
     .attr('cy', 150)
 
   const wideReceiver1 = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 150)
     .attr('cy', 170)
 
   const wideReceiver2 = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 1050)
     .attr('cy', 170)
 
   const tightEnd = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 925)
     .attr('cy', 160)
 
   const quarterback = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 600)
     .attr('cy', 250)
 
   const runningback1 = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 525)
     .attr('cy', 310)
 
   const runningback2 = svg.append('circle')
     .attr('r', 10)
     .attr('stroke-width', 2)
-    .attr('stroke', 'white')
-    .attr('fill', 'black')
     .attr('cx', 675)
     .attr('cy', 310)
 
+  let circles = d3.selectAll('circle');
+  circles
+    .attr('fill', NFLCOLORS[teamCol][0])
+    .attr('stroke', NFLCOLORS[teamCol][1])
 }

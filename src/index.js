@@ -65,7 +65,7 @@ let defense = [{
     "parent": "sf19"
   }
 ];
-defensePositions();
+offensePositions("mia");
 // offensePositions();
 // let team = require('../data/sf19.json');
 // let data = offense.concat(team.filter(d => d.side === "offense"))
