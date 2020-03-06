@@ -1,3 +1,19 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: grey;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+}
+
+.container {
+  display: flex;
+}
+.teamSelection {
+  background: white;
+  height: 150px;
 }

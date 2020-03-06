@@ -1,9 +1,12 @@
+import { offensePositions } from './offense_positions.js';
+import { defensePositions } from './defense_positions.js';
+
 const dims = {
-  height: 1000,
-  width: 1000
+  height: 500,
+  width: 500
 };
-var x = d3.scaleLinear().range([0, 400]);
-var y = d3.scaleLinear().range([0, 400]);
+var x = d3.scaleLinear().range([0, 250]);
+var y = d3.scaleLinear().range([0, 250]);
 let view;
 
 let offense = [
@@ -62,139 +65,117 @@ let defense = [{
     "parent": "sf19"
   }
 ];
-let team = require('../data/sf19.json');
-let data = offense.concat(team.filter(d => d.side === "offense"))
-const svg = d3.select('.canvas')
-  .append('svg')
-  .attr('width', dims.width)
-  .attr('height', dims.height)
-  // .attr("viewBox", `-${dims.width/2} -${dims.height/2} ${dims.width} ${dims.height}`)
-  .style("cursor", "pointer")
-  .style("background", "green")
-  // .on("click", ()=> zoom(rootNode));
+defensePositions();
+// offensePositions();
+// let team = require('../data/sf19.json');
+// let data = offense.concat(team.filter(d => d.side === "offense"))
+// const svg = d3.select('.canvas')
+//   .append('svg')
+//   .attr('width', dims.width)
+//   .attr('height', dims.height)
+//   // .attr("viewBox", `-${dims.width/2} -${dims.height/2} ${dims.width} ${dims.height}`)
+//   .style("cursor", "pointer")
+//   .style("background", "green")
+//   // .on("click", ()=> zoom(rootNode));
 
-const graph = svg.append('g')
-  // .attr('transform', 'translate(50, 50)');
+// const graph = svg.append('g')
+//   // .attr('transform', 'translate(50, 50)');
 
-const stratify = d3.stratify()
-  .id(d => d.name)
-  .parentId(d => d.parent);
+// const stratify = d3.stratify()
+//   .id(d => d.name)
+//   .parentId(d => d.parent);
 
-const rootNode = stratify(data)
-  .sum(d => d.salary);
+// const rootNode = stratify(data)
+//   .sum(d => d.salary);
 
-// bubble pack gen
+// // bubble pack gen
 
- function zoomTo(v) {
-  const k = dims.width / v[2];
+//  function zoomTo(v) {
+//   const k = dims.width / v[2];
 
-  view = v;
-  graph.attr()
-  nodes.attr()
-  label.attr("transform", d =>{ 
-    debugger;
-    return `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`});
-  // node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-  // node.attr("r", d => d.r * k);
-}
-
-function zoom(d, i, n) {
-  let focus0 = focus;
-  debugger;
-  focus = d;
-  const k = dims.width / d.r / 2;
-  x.domain([d.x - d.r, d.x + d.r]);
-  y.domain([d.y - d.r, d.y + d.r]);
-
-  var transition = svg.transition()
-    .duration(d3.event.altKey ? 7500 : 750);
-
-  transition.selectAll('circle')
-    .attr("cx", function (d) {
-      return x(d.x);
-    })
-    .attr("cy", function (d) {
-      return y(d.y);
-    })
-    .attr("r", function (d) {
-      return k * d.r;
-    });
-  focus = d;
-  d3.event.stopPropagation();
-}
-
-const pack = d3.pack()
-  .size([dims.width, dims.height])
-  .padding(3) //gap between circles
-
-const bubbleData = pack(rootNode)
-.descendants();
-let focus = rootNode;
-
-//create ordinal scale
-const color = d3.scaleOrdinal(["#AA0000", "#B3995D"])
-
-//join data and add group for each node
-const nodes = graph.selectAll('g')
-  .data(bubbleData)
-  .enter()
-  .append('g')
-  .attr('transform', d => {
-  // switch (d.name) {
-  //   case "Quarterback":
-  //     d = { x: 300, y: 300}
-  //     break;
-  //   case "Tackle"
-  // }
-  return `translate(${(d.x)}, ${(d.y)})`})
-
-nodes.append('circle')
-  .attr('r', d => d.r)
-  .attr('stroke-width', 2)
-  .attr('stroke', 'white')
-  .attr('fill', d => color(d.depth))
-  .attr('cx', d => d.x)
-  .attr('cy', d => d.y)
-  .attr("pointer-events", d => !d.children ? "none" : null)
-    // return focus !== d && (zoom(d), d3.event.stopPropagation())});
-
-// const zoomTo = v => {
-//   const 
+//   view = v;
+//   graph.attr()
+//   nodes.attr()
+//   label.attr("transform", d =>{ 
+//     debugger;
+//     return `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`});
+//   // node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+//   // node.attr("r", d => d.r * k);
 // }
-graph.selectAll('circle')
-  // .enter()
-  .each(function (d) {this._current = d })
-  .on("mouseover", function () { d3.select(this).attr("stroke", "black"); })
-  .on("mouseout", function () { d3.select(this).attr("stroke", "white"); })
-  .on("click", d => {
-    debugger;
-    zoom(focus === d ? root : d), d3.event.stopPropagation();
-  });
 
-// nodes.filter(node => !node.children)
-//   .append('text')
-//   .attr('text-anchor', 'middle')
-//   .attr('dy', '0.3em') // moves text down
-//   .attr('fill', 'white')
-//   // .style('font-size', d => d.value * 5)
-//   .text(d => d.data.name)
-const label = svg.append("g")
-  .style("font", "10px sans-serif")
-  .attr("pointer-events", "none")
-  .attr("text-anchor", "middle")
-  .selectAll("text")
-  .data(rootNode.descendants())
-  .join("text")
-  .style("fill-opacity", 1)
-  .style("display", "block")
-  .style("font-color", "white")
-  .text(d => {
-    return d.data.name});
+// function zoom(d, i, n) {
+//   debugger;
+//   let k = dims.width / d.r / 2;
+//   x.domain([d.x - d.r, d.x + d.r]);
+//   y.domain([d.y - d.r, d.y + d.r]);
 
-// zoomTo([rootNode.x, rootNode.y, rootNode.r * 2]);
+//   var transition = svg.transition()
+//     .duration(d3.event.altKey ? 7500 : 750);
+
+//   transition.selectAll('circle')
+//     .attr("cx", d => x(d.x))
+//     .attr("cy", d => y(d.y))
+//     .attr("r", d => k * d.r);
+//   focus = d;
+//   d3.event.stopPropagation();
+// }
+
+// const pack = d3.pack()
+//   .size([dims.width, dims.height])
+//   .padding(3) //gap between circles
+
+// const bubbleData = pack(rootNode)
+// .descendants();
+// let focus = rootNode;
+
+// //create ordinal scale
+// const color = d3.scaleOrdinal(["#AA0000", "#B3995D"])
+
+// //join data and add group for each node
+// const nodes = graph.selectAll('g')
+//   .data(bubbleData)
+//   .enter()
+//   .append('g')
+//   .attr('transform', `translate(50, 50)`);
+
+// nodes.append('circle')
+//   .attr('r', d => d.r)
+//   .attr('stroke-width', 2)
+//   .attr('stroke', 'white')
+//   .attr('fill', d => color(d.depth))
+//   .attr('cx', d => d.x)
+//   .attr('cy', d => d.y)
+//   .attr("pointer-events", d => !d.children ? "none" : null)
+//     // return focus !== d && (zoom(d), d3.event.stopPropagation())});
+
+// // const zoomTo = v => {
+// //   const 
+// // }
+// graph.selectAll('circle')
+//   // .enter()
+//   // .each(function (d) {this._current = d })
+//   .on("mouseover", function () { d3.select(this).attr("stroke", "black"); })
+//   .on("mouseout", function () { d3.select(this).attr("stroke", "white"); })
+//   .on("click", d => {
+//     debugger;
+//     zoom(focus === d ? rootNode : d);
+//     d3.event.stopPropagation();
+//   });
+
+// const label = svg.append("g")
+//   .style("font", "10px sans-serif")
+//   .attr("pointer-events", "none")
+//   .attr("text-anchor", "middle")
+//   .selectAll("text")
+//   .data(rootNode.descendants())
+//   .join("text")
+//   .style("fill-opacity", 1)
+//   .style("display", "block")
+//   .style("font-color", "white")
+//   .text(d => {
+//     return d.data.name});
 
 
-// d3.select(self.frameElement).style("height", dims.width + "px");
-const handleClick = d => {
-  debugger;
-}
+// const handleClick = d => {
+//   debugger;
+// }
