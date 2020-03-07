@@ -1,6 +1,6 @@
 import NFLCOLORS from '../data/colors.js';
 
-export const offensePositions = (teamCol) => {
+export const offensePositions = (team) => {
   // const svg = d3.select('.canvas')
   //   .append('svg')
   //   .attr('width', 1000)
@@ -95,7 +95,6 @@ export const offensePositions = (teamCol) => {
   //   .attr('fill', 'black')
   //   .attr('cx', 550)
   //   .attr('cy', 300)
- 
   const svg = d3.select('.canvas')
     .append('svg')
     .attr('width', 1200)
@@ -173,6 +172,6 @@ export const offensePositions = (teamCol) => {
 
   let circles = d3.selectAll('circle');
   circles
-    .attr('fill', NFLCOLORS[teamCol][0])
-    .attr('stroke', NFLCOLORS[teamCol][1])
+    .attr('fill', NFLCOLORS[team][0])
+    .attr('stroke', NFLCOLORS[team][1])
 }

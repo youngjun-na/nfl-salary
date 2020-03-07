@@ -1,14 +1,35 @@
 import { offensePositions } from './offense_positions.js';
 import { defensePositions } from './defense_positions.js';
-
-const update = () => {
+const updateTeam = () => {
   document.querySelectorAll(".teamIcon").forEach(team => {
     team.addEventListener('click', e => {
-      offensePositions(e.currentTarget.id)
+      let canvas = document.querySelector('.canvas');
+      let team = e.currentTarget.id
+      canvas.removeChild(canvas.childNodes[0]);
+      document.querySelector(".selected").classList.remove("selected")
+      document.getElementById(team).classList.add("selected")
+      document.getElementById("offense").checked ? offensePositions(team) : defensePositions(team)
+    })
+  });
+}
+const updateSide = () =>{
+  document.querySelectorAll(".toggle").forEach(option => {
+    option.addEventListener('click', e => {
+      let canvas = document.querySelector('.canvas');
+      canvas.removeChild(canvas.childNodes[0]);
+      let team = document.querySelector(".selected").id;
+      if (e.currentTarget.id === "offense" || e.currentTarget.id ==="toggleOffense") {
+        debugger;
+        offensePositions(team)
+      } else {
+        debugger;
+        defensePositions(team)
+      }
     })
   })
 }
-update();
+updateTeam();
+updateSide();
 // offensePositions();
 // let team = require('../data/sf19.json');
 // let data = offense.concat(team.filter(d => d.side === "offense"))

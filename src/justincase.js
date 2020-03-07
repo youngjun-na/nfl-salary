@@ -68,6 +68,7 @@ const svg = d3.select('.canvas')
   // .attr('height', dims.height)
   .attr("viewBox", `-${dims.width / 2} -${dims.height / 2} ${dims.width} ${dims.height}`)
   .style("cursor", "pointer")
+  .attr("footballField")
   .style("background", "green")
   .on("click", () => zoom(rootNode));
 

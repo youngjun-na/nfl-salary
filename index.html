@@ -14,7 +14,7 @@
   </div>
   <div class="mainContent">
     <div class="container">
-      <div class="row">
+      <div class="selectionContainer">
         <div class="teamSelection">
           <div class="conference">
             <h3 class="confLabel">AFC</h3>
@@ -117,7 +117,7 @@
               <img class="teamPic" src="./data/larams.png">
               <div class="teamlabel">LAR</div>
             </div>
-            <div class="teamIcon" id="lac">
+            <div class="teamIcon" id="min">
               <img class="teamPic" src="./data/minnesota.png">
               <div class="teamlabel">MIN</div>
             </div>
@@ -137,7 +137,7 @@
               <img class="teamPic" src="./data/seattle.png">
               <div class="teamlabel">SEA</div>
             </div>
-            <div class="teamIcon" id="sf">
+            <div class="teamIcon selected" id="sf">
               <img class="teamPic" src="./data/sanfrancisco.png">
               <div class="teamlabel">SF</div>
             </div>
@@ -151,6 +151,16 @@
             </div>
             </div>
           </div>
+          <div class="sideToggle">
+            <label class="toggle" id="toggleOffense">
+              <input type="radio" name="side" id="offense" value="offense" checked="checked">
+              Offense
+            </label>
+            <label class="toggle" id="toggleDefense">
+              <input type="radio" name="side" id="defense" value="defense">
+              Defense
+            </label>
+          </div>
         </div>
         <div class="field">
           <div class="canvas">
@@ -161,7 +171,7 @@
       </div>
     </div>
   </div>
- 
+
     <script src="https://d3js.org/d3.v5.js"></script>
     <!-- <script src="./src/index.js"></script> -->
     <!-- <script src="./src/test.js"></script> -->

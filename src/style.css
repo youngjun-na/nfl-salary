@@ -9,18 +9,26 @@ body {
   font-size: 30px;
   color: white;
 }
-
+/* .canvas {
+  width: 1200px;
+  height: 500px;
+  background: green;
+} */
 .container {
   display: flex;
   flex-direction: column;
 }
-.teamSelection {
+.selectionContainer{
+  display: flex;
+  flex-direction: row;
   background: white;
   height: 120px;
   width: 1200px;
+  padding: 5px 0;
+}
+.teamSelection {
   align-content: center;
   justify-content: center;
-  padding: 5px 0;
 }
 .conference {
   display: flex;
@@ -45,6 +53,10 @@ body {
   cursor: pointer;
   border: 1px solid grey;
 }
+.selected {
+  font-weight: bold;
+  border: 1px solid black;
+}
 .teamPic {
   cursor: pointer;
   height: 25px;
@@ -52,4 +64,8 @@ body {
 }
 .teamLabel {
   cursor: pointer;
+}
+.sideToggle {
+  display: flex;
+  flex-direction: column;
 }
