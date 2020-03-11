@@ -1,8 +1,60 @@
 import NFLCOLORS from '../data/colors.js';
 
 export const offensePositions = (team) => {
-  let currentTeam = require(`../data/${team}.json`);
-  let data = offense.concat(team.filter(d => d.side === "offense"))
+
+  let offense = [
+    {
+      "name": "sf19",
+      "parent": ""
+    },
+
+    {
+      "name": "Quarterback",
+      "parent": "sf19"
+    },
+    {
+      "name": "Tackle",
+      "parent": "sf19"
+    },
+    {
+      "name": "Tight End",
+      "parent": "sf19"
+    },
+    {
+      "name": "Running Back",
+      "parent": "sf19"
+    },
+    {
+      "name": "Wide Receiver",
+      "parent": "sf19"
+    },
+    {
+      "name": "Guard",
+      "parent": "sf19"
+    },
+    {
+      "name": "Center",
+      "parent": "sf19"
+    }
+  ];
+
+  let currentTeam = require(`../data/${team}19.json`);
+  let data = offense.concat(currentTeam.filter(d => d.side === "offense"));
+
+  const stratify = d3.stratify()
+    .id(d => d.name)
+    .parentId(d => d.parent);
+
+  const rootNode = stratify(data)
+    .sum(d => d.salary);
+  const pack = d3.pack()
+    .size([500, 500])
+    .padding(3) //gap between circles
+
+  console.log(rootNode);
+
+  const bubbleData = pack(rootNode).descendants();
+  console.log(bubbleData);
 
   const svg = d3.select('.canvas')
     .append('svg')

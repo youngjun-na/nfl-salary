@@ -28,6 +28,10 @@ const updateSide = () =>{
     })
   })
 }
+const initialLoad = () => {
+  offensePositions("sf")
+};
+initialLoad();
 updateTeam();
 updateSide();
 // offensePositions();

@@ -6,7 +6,7 @@ const team = "sf19";
 // d3.csv(`../data/${team}.csv`, (d) => {
 const jsonCreate = d3.csv(`../data/sf19.csv`, (d) => {
   
-  let name = d["Players"];
+  let name = d["ACTIVE PLAYERS"];
   let pos = d["POS."];
   let salary = d["CAP HIT"].substring(1);
   let side;
